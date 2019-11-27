@@ -40,15 +40,7 @@ def handle_message(event):
     msg = event.message.text
     re = "超出回覆範圍，請重新輸入"
 
-    if msg in ["哈囉","hi","Hi","HI","你好","妳好"] :
-        re = "你好~很高興認識你，請在下列關鍵字中選擇您想聊天的話題並輸入關鍵字: 交友"
-    elif msg == "交友":
-        re = "是不是碰到什麼困難了呢?"
-
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=re))
-        
+    if "貼圖" in msg:
         sticker_message = StickerSendMessage(
             package_id = "11537" ,
             sticker_id = "52002744"
@@ -56,6 +48,12 @@ def handle_message(event):
         line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
+        return
+    
+    if msg in ["哈囉","hi","Hi","HI","你好","妳好"] :
+        re = "你好~很高興認識你，請在下列關鍵字中選擇您想聊天的話題並輸入關鍵字: 交友"
+    elif msg == "交友":
+        re = "是不是碰到什麼困難了呢?"    
     elif "吵架" in msg:
         re = "吵架是在所難免的啦~是因為在乎你/妳才會這樣的~"
     elif "體重" in msg:
