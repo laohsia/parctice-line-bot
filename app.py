@@ -38,7 +38,22 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    re = "爽~"
+    re = "超出回覆範圍，請重新輸入"
+
+    if msg in ["哈囉","hi","Hi","HI","你好","妳好"] :
+        re = "你好~很高興認識你，請在下列關鍵字中選擇您想聊天的話題並輸入關鍵字: 交友"
+    elif msg == "交友":
+        re = "是不是碰到什麼困難了呢?"
+    elif "吵架" in msg:
+        re = "吵架是在所難免的啦~是因為在乎你/妳才會這樣的~"
+    elif "體重" in msg:
+        re = "多多運動以及均衡飲食，保持健康的體態是很重要的!"
+    elif "價值觀" in msg:
+        re = "這種事情只需要雙方冷靜下來多多溝通就沒問題~"
+    elif "分手" in msg:
+        re = "先冷靜下來想想看，千萬別衝動行事"
+    elif "家人" in msg:
+        re = "家人跟伴侶都非常重要，所以你必須扮演好潤滑的角色!"
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=re))
