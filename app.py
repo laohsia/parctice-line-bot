@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+    MessageEvent, TextMessage, TextSendMessage, StickerSendMessage
 )
 
 app = Flask(__name__)
@@ -44,6 +44,13 @@ def handle_message(event):
         re = "你好~很高興認識你，請在下列關鍵字中選擇您想聊天的話題並輸入關鍵字: 交友"
     elif msg == "交友":
         re = "是不是碰到什麼困難了呢?"
+        sticker_message = StickerSendMessage(
+            package_id = "11537" ,
+            sticker_id = "52002744"
+            )
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
     elif "吵架" in msg:
         re = "吵架是在所難免的啦~是因為在乎你/妳才會這樣的~"
     elif "體重" in msg:
