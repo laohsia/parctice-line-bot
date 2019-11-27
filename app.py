@@ -44,6 +44,11 @@ def handle_message(event):
         re = "你好~很高興認識你，請在下列關鍵字中選擇您想聊天的話題並輸入關鍵字: 交友"
     elif msg == "交友":
         re = "是不是碰到什麼困難了呢?"
+
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=re))
+        
         sticker_message = StickerSendMessage(
             package_id = "11537" ,
             sticker_id = "52002744"
@@ -62,8 +67,8 @@ def handle_message(event):
     elif "家人" in msg:
         re = "家人跟伴侶都非常重要，所以你必須扮演好潤滑的角色!"
     line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=re))
+    event.reply_token,
+    TextSendMessage(text=re))
 
 
 if __name__ == "__main__":
