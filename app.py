@@ -53,37 +53,7 @@ def handle_message(event):
     if msg != [] :
         re = "你好~很高興認識你，感謝您加職缺小幫手為您的好友!\n小幫手為您快速搜尋符合專業的職缺，請在下列選單中點選您所需要的選項。\n由左至右分別為學生、新鮮人、上班族，請依身分選擇，系統會導向對應的求職頁面!\n假如沒有符合的選項，請輸入[不符合身分]"
     elif msg == "不符合身分" or "[不符合身分]" :
-        re = {
-  "type": "flex",
-  "altText": "Flex Message",
-  "contents": {
-    "type": "bubble",
-    "direction": "ltr",
-    "footer": {
-      "type": "box",
-      "layout": "horizontal",
-      "contents": [
-        {
-          "type": "button",
-          "action": {
-            "type": "uri",
-            "label": "主管職",
-            "uri": "https://www.104.com.tw/jobs/main/higher"
-          }
-        },
-        {
-          "type": "button",
-          "action": {
-            "type": "uri",
-            "label": "中高齡",
-            "uri": "https://senior.104.com.tw/?tabs=jobs&utm_source=official_104&utm_medium=104_menu_elderly"
-          }
-        }
-      ]
-    }
-  }
-}
-
+        re = "請稍等~XD我還沒更新功能哈哈哈哈"
         
     line_bot_api.reply_message(
     event.reply_token,
