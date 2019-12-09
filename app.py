@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, TempateSendMessage, FlexSendMessage
+    MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, TemplateSendMessage, FlexSendMessage
 )
 
 app = Flask(__name__)
@@ -49,25 +49,37 @@ def handle_message(event):
         event.reply_token,
         sticker_message)
         return
+
+   if "不符合身分" in msg:
+        message = TemplateSendMessage(
+            alt_text='Buttons template',
+            template=ButtonsTemplate(
+            thumbnail_image_url='https://example.com/image.jpg',
+            title='Menu',
+            text='Please select',
+            actions=[
+                    PostbackTemplateAction(
+                        label='postback',
+                        text='postback text',
+                        data='action=buy&itemid=1'
+                    ),
+                   MessageTemplateAction(
+                        label='message',
+                        text='message text'
+                    ),
+                   URITemplateAction(
+                        label='uri',
+                        uri='http://example.com/'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+        return
     
     elif "找工作" in msg :
         re = "你好~很高興認識你，感謝您加職缺小幫手為您的好友!\n小幫手為您快速搜尋符合專業的職缺，請在下列選單中點選您所需要的選項。\n由左至右分別為學生、新鮮人、上班族，請依身分選擇，系統會導向對應的求職頁面!\n假如沒有符合的選項，請輸入[不符合身分]"
-    elif "不符合身分" in msg:
-        flex_message = FlexSendMessage(
-        alt_text='hello',
-        contents={
-            'type': 'bubble',
-            'direction': 'ltr',
-            'hero': {
-                'type': 'image',
-                'url': 'https://example.com/cafe.jpg',
-                'size': 'full',
-                'aspectRatio': '20:13',
-                'aspectMode': 'cover',
-                'action': { 'type': 'uri', 'uri': 'http://example.com', 'label': 'label' }
-            }
-        }
-    )
+    
     elif "學生" in msg:
         re = "請輸入打工性質 :  長期、短期、假日、寒假、暑假"
     elif msg in ["長期","短期","假日","寒假","暑假"]:
