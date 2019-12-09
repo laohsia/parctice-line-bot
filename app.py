@@ -55,35 +55,32 @@ def handle_message(event):
     elif "不符合身分" in msg:
         flex_message = FlexSendMessage( alt_text='hello',
         contents = {
-  "type": "flex",
-  "altText": "Flex Message",
-  "contents": {
-    "type": "bubble",
-    "direction": "ltr",
-    "footer": {
-      "type": "box",
-      "layout": "horizontal",
-      "contents": [
-        {
-          "type": "button",
-          "action": {
-            "type": "uri",
-            "label": "主管職",
-            "uri": "https://www.104.com.tw/jobs/main/higher"
+            "type": "bubble",
+            "direction": "ltr",
+            "footer": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "uri",
+                    "label": "主管職",
+                    "uri": "https://www.104.com.tw/jobs/main/higher"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "uri",
+                    "label": "中高齡",
+                    "uri": "https://senior.104.com.tw/?tabs=jobs&utm_source=official_104&utm_medium=104_menu_elderly"
+                  }
+                }
+              ]
+            }
           }
-        },
-        {
-          "type": "button",
-          "action": {
-            "type": "uri",
-            "label": "中高齡",
-            "uri": "https://senior.104.com.tw/?tabs=jobs&utm_source=official_104&utm_medium=104_menu_elderly"
-          }
-        }
-      ]
-    }
-  }
-})
+        )
     elif "學生" in msg:
         re = "請輸入打工性質 :  長期、短期、假日、寒假、暑假"
     elif msg in ["長期","短期","假日","寒假","暑假"]:
