@@ -51,36 +51,34 @@ def handle_message(event):
         return
 
     if "不符合身分" in msg:
-        buttons_template_message = TemplateSendMessage(
-            alt_text = "Buttons Template",
-            template = ButtonsTemplate(
-                thumbnail_image_url="http://example.com/image.jpg",
-                title="Menu",
-                text="Please select",
-                actions=[
-                    PostbackTemplateAction(
-                        label="postback",
-                        text="postback text",
-                        data="action=buy&itemid=1"
-                    ),
-                    MessageTemplateAction(
-                        label="message",
-                        text="message text"
-                    ),
-                    URITemplateAction(
-                        label="uri",
-                        uri="http://example.com/"
-                    )
-                ]
-            )
+        buttons_template = TemplateSendMessage(
+        alt_text='Buttons Template',
+        template=ButtonsTemplate(
+            title='這是ButtonsTemplate',
+            text='ButtonsTemplate可以傳送text,uri',
+            thumbnail_image_url='顯示在開頭的大圖片網址',
+            actions=[
+                MessageTemplateAction(
+                    label='ButtonsTemplate',
+                    text='ButtonsTemplate'
+                ),
+                URITemplateAction(
+                    label='VIDEO1',
+                    uri='影片網址'
+                ),
+                PostbackTemplateAction(
+                    label='postback',
+                    text='postback text',
+                    data='postback1'
+                )
+            ]
         )
-        line_bot_api.reply_message(
-        event.reply_token,
-        buttons_template_message)
-        return
+    )
+    line_bot_api.reply_message(event.reply_token, buttons_template)
+    return
                     
 
-    elif "找工作" in msg:
+    if "找工作" in msg:
         re = "你好~很高興認識你，感謝您加職缺小幫手為您的好友!\n小幫手為您快速搜尋符合專業的職缺，請在下列選單中點選您所需要的選項。\n由左至右分別為學生、新鮮人、上班族，請依身分選擇，系統會導向對應的求職頁面!\n假如沒有符合的選項，請輸入[不符合身分]"
     elif "學生" in msg:
         re = "請輸入打工性質 :  長期、短期、假日、寒假、暑假"
