@@ -58,16 +58,16 @@ def handle_message(event):
                 title="Menu",
                 text="Please select",
                 actions=[
-                    PostbackAction(
+                    PostbackTemplateAction(
                         label="postback",
-                        display_text="postback text",
+                        text="postback text",
                         data="action=buy&itemid=1"
                     ),
-                    MessageAction(
+                    MessageTemplateAction(
                         label="message",
                         text="message text"
                     ),
-                    URIAction(
+                    URITemplateAction(
                         label="uri",
                         uri="http://example.com/"
                     )
