@@ -7,7 +7,21 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-   MessageEvent, TextMessage, TextSendMessage, StickerSendMessage, TemplateSendMessage, FlexSendMessage
+    MessageEvent, TextMessage, TextSendMessage,
+    SourceUser, SourceGroup, SourceRoom,
+    TemplateSendMessage, ConfirmTemplate, MessageAction,
+    ButtonsTemplate, ImageCarouselTemplate, ImageCarouselColumn, URIAction,
+    PostbackAction, DatetimePickerAction,
+    CameraAction, CameraRollAction, LocationAction,
+    CarouselTemplate, CarouselColumn, PostbackEvent,
+    StickerMessage, StickerSendMessage, LocationMessage, LocationSendMessage,
+    ImageMessage, VideoMessage, AudioMessage, FileMessage,
+    UnfollowEvent, FollowEvent, JoinEvent, LeaveEvent, BeaconEvent,
+    MemberJoinedEvent, MemberLeftEvent,
+    FlexSendMessage, BubbleContainer, ImageComponent, BoxComponent,
+    TextComponent, SpacerComponent, IconComponent, ButtonComponent,
+    SeparatorComponent, QuickReply, QuickReplyButton,
+    ImageSendMessage
 )
 
 app = Flask(__name__)
@@ -52,8 +66,8 @@ def handle_message(event):
 
     if "不符合身分" in msg:
         buttons_template = TemplateSendMessage(
-        alt_text='Buttons Template',
-        template=ButtonsTemplate(
+        alt_text='Buttons alt text',
+        template=buttons_template(
             title='這是ButtonsTemplate',
             text='ButtonsTemplate可以傳送text,uri',
             thumbnail_image_url='顯示在開頭的大圖片網址',
