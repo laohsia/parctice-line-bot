@@ -64,13 +64,13 @@ def handle_message(event):
         sticker_message)
         return
 
-    if "不符合身分" in msg:
+    if msg == "不符合身分" :
         buttons_template = ButtonsTemplate(
-            title='My buttons sample', text='Hello, my buttons', actions=[
-                URIAction(label='Go to line.me', uri='https://line.me'),
-                PostbackAction(label='ping', data='ping'),
-                PostbackAction(label='ping with text', data='ping', text='ping'),
-                MessageAction(label='Translate Rice', text='米')
+            title='其他職缺身分', text='請選擇以下身分別', actions=[
+                URIAction(label='主管職', uri='https://www.104.com.tw/jobs/main/higher'),
+                URIAction(label='中高齡', uri='https://senior.104.com.tw/?tabs=jobs&utm_source=official_104&utm_medium=104_menu_elderly'),
+                #PostbackAction(label='ping with text', data='ping', text='ping'),
+                #MessageAction(label='Translate Rice', text='米')
             ])
         template_message = TemplateSendMessage(
             alt_text='Buttons alt text', template=buttons_template)
