@@ -64,7 +64,7 @@ def handle_message(event):
         sticker_message)
         return
 
-    if msg == "不符合身分" :
+    elif msg == "不符合身分" :
         buttons_template = ButtonsTemplate(
             title='其他職缺身分', text='請選擇以下身分別', actions=[
                 URIAction(label='主管職', uri='https://www.104.com.tw/jobs/main/higher'),
@@ -75,7 +75,7 @@ def handle_message(event):
         template_message = TemplateSendMessage(
             alt_text='Buttons alt text', template=buttons_template)
         line_bot_api.reply_message(event.reply_token, template_message)
-    return
+        return
                     
 
     if "找工作" in msg:
