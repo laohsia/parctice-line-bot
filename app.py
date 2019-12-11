@@ -52,7 +52,7 @@ def handle_message(event):
 
     if "不符合身分" in msg:
         buttons_template_message = TemplateSendMessage(
-            alt_text = "Buttons template",
+            alt_text = "Buttons Template",
             template = ButtonsTemplate(
                 thumbnail_image_url="http://example.com/image.jpg",
                 title="Menu",
