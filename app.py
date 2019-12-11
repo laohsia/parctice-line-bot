@@ -65,7 +65,7 @@ def handle_message(event):
         return
 
     if "不符合身分" in msg:
-        buttons_template = TemplateSendMessage(
+        template_message = TemplateSendMessage(
         alt_text='Buttons alt text',
         template=buttons_template(
             title='這是ButtonsTemplate',
@@ -88,7 +88,7 @@ def handle_message(event):
             ]
         )
     )
-    line_bot_api.reply_message(event.reply_token, buttons_template)
+    line_bot_api.reply_message(event.reply_token, template_message)
     return
                     
 
