@@ -129,7 +129,31 @@ def handle_message(event):
                         style='link',
                         height='sm',
                         action=MessageAction(label='問題2', text="問題2")
-                    )
+                    ),
+                    SeparatorComponent(),
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='問題2', text="問題2")
+                    ),
+                    SeparatorComponent(),
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='問題2', text="問題2")
+                    ),
+                    SeparatorComponent(),
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='問題2', text="問題2")
+                    ),
+                    SeparatorComponent(),
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='問題2', text="問題2")
+                    )                  
                 ]
             ),
         )
