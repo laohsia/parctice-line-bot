@@ -106,7 +106,7 @@ def handle_message(event):
                 layout='vertical',
                 contents=[
                     # title
-                    TextComponent(text='常見疑問', weight='bold', size='xl'),
+                    TextComponent(text='常見疑問', weight='bold', size='xl')
                 ],
             ),
             footer=BoxComponent(
