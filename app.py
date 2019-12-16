@@ -120,7 +120,7 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='問題1', text='問題1'),
+                        action=MessageAction(label='最佳食用方式?', text="最佳食用方式?"),
                     ),
                     # separator
                     SeparatorComponent(),
@@ -128,34 +128,46 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='問題2', text="問題2")
+                        action=MessageAction(label='運費計算方式?', text="運費計算方式?")
                     ),
                     SeparatorComponent(),
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='問題2', text="問題2")
+                        action=MessageAction(label='建議搭配飲品?', text="建議搭配飲品?")
                     ),
                     SeparatorComponent(),
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='問題2', text="問題2")
+                        action=MessageAction(label='素食者可以吃嗎?', text="素食者可以吃嗎?")
                     ),
                     SeparatorComponent(),
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='問題2', text="問題2")
+                        action=MessageAction(label='期待新的產品推出', text="期待新的產品推出")
                     ),
                     SeparatorComponent(),
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='問題2', text="問題2")
-                    )                  
+                        action=MessageAction(label='一般訂購跟彌月訂購價格一樣嗎?', text="一般訂購跟彌月訂購價格一樣嗎?")
+                    ),
+                    SeparatorComponent(),
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='保冷劑跟保冷袋需要加購嗎?', text="保冷劑跟保冷袋需要加購嗎?")
+                    ),
+                    SeparatorComponent(),
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='可以告訴我完整的訂購流程嗎?', text="可以告訴我完整的訂購流程嗎?")
+                    )
                 ]
-            ),
+            ) 
         )
         message = FlexSendMessage(alt_text="hello", contents=bubble)
         line_bot_api.reply_message(
