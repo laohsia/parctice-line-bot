@@ -107,51 +107,6 @@ def handle_message(event):
                 contents=[
                     # title
                     TextComponent(text='常見問題', weight='bold', size='xl')
-                    # review
-                    # info
-                    #BoxComponent(
-                      #  layout='vertical',
-                        #margin='lg',
-                        #spacing='sm',
-                        #contents=[
-                          #  BoxComponent(
-                            #    layout='baseline',
-                              #  spacing='sm',
-                                #contents=[
-                                  #  TextComponent(
-                                    #    text='Place',
-                                      #  color='#aaaaaa',
-                                        #size='sm',
-                                        #flex=1
-                                    #),
-                                    #TextComponent(
-                                      #  text='Shinjuku, Tokyo',
-                                        #wrap=True,
-                                        #color='#666666',
-                                        #size='sm',
-                                        #flex=5
-                                    #)
-                                #],
-                            #),
-                            #BoxComponent(
-                              #  layout='baseline',
-                                #spacing='sm',
-                                #contents=[
-                                  #  TextComponent(
-                                    #    text='Time',
-                                      #  color='#aaaaaa',
-                                        #size='sm',
-                                        #flex=1
-                                    #),
-                                    #TextComponent(
-                                      #  text="10:00 - 23:00",
-                                        #wrap=True,
-                                        #color='#666666',
-                                        #size='sm',
-                                        #flex=5,
-                                    #),
-                                #],
-                            #),
                         ]
                     ),
                 
@@ -165,7 +120,7 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=URIAction(label='CALL', uri='tel:000000'),
+                        action=MessageAction(label='問題1', text='問題1'),
                     ),
                     # separator
                     SeparatorComponent(),
@@ -173,7 +128,7 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=URIAction(label='WEBSITE', uri="https://example.com")
+                        action=MessageAction(label='問題2', text="問題2")
                     )
                 ]
             ),
