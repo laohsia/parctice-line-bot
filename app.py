@@ -96,17 +96,64 @@ def handle_message(event):
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
-                url='https://example.com/cafe.jpg',
+                url='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/79181133_3020826534602508_1338712426803101696_n.jpg?_nc_cat=102&_nc_ohc=w6nC_6npBroAQnol9080iyLn5SU9sz_HWPpPoRZzYlNGJ5xH6ItHR_3NA&_nc_ht=scontent.ftpe8-4.fna&oh=c293f811df9edeaf56f6d4ef3dad4647&oe=5E78A3C5',
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
-                action=URIAction(uri='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/79181133_3020826534602508_1338712426803101696_n.jpg?_nc_cat=102&_nc_ohc=w6nC_6npBroAQnol9080iyLn5SU9sz_HWPpPoRZzYlNGJ5xH6ItHR_3NA&_nc_ht=scontent.ftpe8-4.fna&oh=c293f811df9edeaf56f6d4ef3dad4647&oe=5E78A3C5', label='label')
+                action=URIAction(uri='http://example.com', label='label')
             ),
             body=BoxComponent(
                 layout='vertical',
                 contents=[
                     # title
-                    TextComponent(text='常見疑問', weight='bold', size='xl')
+                    TextComponent(text='Brown Cafe', weight='bold', size='xl'),
+                    # review
+                    # info
+                    BoxComponent(
+                        layout='vertical',
+                        margin='lg',
+                        spacing='sm',
+                        contents=[
+                            BoxComponent(
+                                layout='baseline',
+                                spacing='sm',
+                                contents=[
+                                    TextComponent(
+                                        text='Place',
+                                        color='#aaaaaa',
+                                        size='sm',
+                                        flex=1
+                                    ),
+                                    TextComponent(
+                                        text='Shinjuku, Tokyo',
+                                        wrap=True,
+                                        color='#666666',
+                                        size='sm',
+                                        flex=5
+                                    )
+                                ],
+                            ),
+                            BoxComponent(
+                                layout='baseline',
+                                spacing='sm',
+                                contents=[
+                                    TextComponent(
+                                        text='Time',
+                                        color='#aaaaaa',
+                                        size='sm',
+                                        flex=1
+                                    ),
+                                    TextComponent(
+                                        text="10:00 - 23:00",
+                                        wrap=True,
+                                        color='#666666',
+                                        size='sm',
+                                        flex=5,
+                                    ),
+                                ],
+                            ),
+                        ],
+                    )
                 ],
             ),
             footer=BoxComponent(
@@ -117,17 +164,17 @@ def handle_message(event):
                     SpacerComponent(size='sm'),
                     # callAction
                     ButtonComponent(
-                        style='text',
+                        style='link',
                         height='sm',
-                        action=PostbackAction(label='問題1', text='問題1'),
+                        action=URIAction(label='CALL', uri='tel:000000'),
                     ),
                     # separator
                     SeparatorComponent(),
                     # websiteAction
                     ButtonComponent(
-                        style='text',
+                        style='link',
                         height='sm',
-                        action=PostbackAction(label='問題2', uri="問題2")
+                        action=URIAction(label='WEBSITE', uri="https://example.com")
                     )
                 ]
             ),
