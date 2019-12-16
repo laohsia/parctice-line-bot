@@ -106,56 +106,55 @@ def handle_message(event):
                 layout='vertical',
                 contents=[
                     # title
-                    TextComponent(text='Brown Cafe', weight='bold', size='xl'),
+                    TextComponent(text='常見問題', weight='bold', size='xl')
                     # review
                     # info
-                    BoxComponent(
-                        layout='vertical',
-                        margin='lg',
-                        spacing='sm',
-                        contents=[
-                            BoxComponent(
-                                layout='baseline',
-                                spacing='sm',
-                                contents=[
-                                    TextComponent(
-                                        text='Place',
-                                        color='#aaaaaa',
-                                        size='sm',
-                                        flex=1
-                                    ),
-                                    TextComponent(
-                                        text='Shinjuku, Tokyo',
-                                        wrap=True,
-                                        color='#666666',
-                                        size='sm',
-                                        flex=5
-                                    )
-                                ],
-                            ),
-                            BoxComponent(
-                                layout='baseline',
-                                spacing='sm',
-                                contents=[
-                                    TextComponent(
-                                        text='Time',
-                                        color='#aaaaaa',
-                                        size='sm',
-                                        flex=1
-                                    ),
-                                    TextComponent(
-                                        text="10:00 - 23:00",
-                                        wrap=True,
-                                        color='#666666',
-                                        size='sm',
-                                        flex=5,
-                                    ),
-                                ],
-                            ),
-                        ],
-                    )
-                ],
-            ),
+                    #BoxComponent(
+                      #  layout='vertical',
+                        #margin='lg',
+                        #spacing='sm',
+                        #contents=[
+                          #  BoxComponent(
+                            #    layout='baseline',
+                              #  spacing='sm',
+                                #contents=[
+                                  #  TextComponent(
+                                    #    text='Place',
+                                      #  color='#aaaaaa',
+                                        #size='sm',
+                                        #flex=1
+                                    #),
+                                    #TextComponent(
+                                      #  text='Shinjuku, Tokyo',
+                                        #wrap=True,
+                                        #color='#666666',
+                                        #size='sm',
+                                        #flex=5
+                                    #)
+                                #],
+                            #),
+                            #BoxComponent(
+                              #  layout='baseline',
+                                #spacing='sm',
+                                #contents=[
+                                  #  TextComponent(
+                                    #    text='Time',
+                                      #  color='#aaaaaa',
+                                        #size='sm',
+                                        #flex=1
+                                    #),
+                                    #TextComponent(
+                                      #  text="10:00 - 23:00",
+                                        #wrap=True,
+                                        #color='#666666',
+                                        #size='sm',
+                                        #flex=5,
+                                    #),
+                                #],
+                            #),
+                        ]
+                    ),
+                
             footer=BoxComponent(
                 layout='vertical',
                 spacing='sm',
