@@ -102,12 +102,7 @@ def handle_message(event):
                 title='台中高鐵站門市(自取)',
                 text='請填寫表單，完成後來電確認，取貨時付款即可',
                 actions=[
-                    PostbackAction(
-                        label='~~~~~~~~~~~~~~~~~~~',
-                        display_text='postback text1',
-                        data='action=buy&itemid=1'
-                    ),
-                   MessageAction(
+                    MessageAction(
                         label='門市地址',
                         text='高鐵門市地址'
                     ),
@@ -122,11 +117,6 @@ def handle_message(event):
                 title='美村本店(自取)',
                 text='請填寫表單，完成後來電確認，取貨時付款即可',
                 actions=[
-                    PostbackAction(
-                        label='~~~~~~~~~~~~~~~~~~~',
-                        display_text='postback text1',
-                        data='action=buy&itemid=1'
-                    ),
                     MessageAction(
                         label='門市地址',
                         text='美村本店地址'
@@ -142,15 +132,6 @@ def handle_message(event):
                 title='宅配預訂',
                 text='全台冷凍宅配，請先填寫完訂單並來電確認交貨日期後再行匯款',
                 actions=[
-                    PostbackAction(
-                        label='~~~~~~~~~~~~~~~~~~~',
-                        display_text='postback text1',
-                        data='action=buy&itemid=1'
-                    ),
-                    MessageAction(
-                        label='~~~~~~~~~~~~~~~~~~~',
-                        text='message text1'
-                    ),
                     URIAction(
                         label='訂購表單',
                         uri='https://bit.ly/2sAgS4I'
