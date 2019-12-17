@@ -93,7 +93,54 @@ def handle_message(event):
         return
 
     elif msg == "flex":
-        bubble = BubbleContainer(
+        carousel = CarouselContainer(
+            ( BubbleContainer(
+            direction='ltr',
+            hero=ImageComponent(
+                url='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/79181133_3020826534602508_1338712426803101696_n.jpg?_nc_cat=102&_nc_ohc=w6nC_6npBroAQnol9080iyLn5SU9sz_HWPpPoRZzYlNGJ5xH6ItHR_3NA&_nc_ht=scontent.ftpe8-4.fna&oh=c293f811df9edeaf56f6d4ef3dad4647&oe=5E78A3C5',
+                size='full',
+                aspect_ratio='20:13',
+                aspect_mode='cover',
+                action=URIAction(uri='http://example.com', label='label')
+            ),
+            body=BoxComponent(
+                layout='vertical',
+                contents=[
+                    # title
+                    TextComponent(text='常見問題', weight='bold', size='xl')
+                        ]
+                    ),
+                
+            footer=BoxComponent(
+                layout='vertical',
+                spacing='sm',
+                contents=[
+                    # callAction, separator, websiteAction
+                    SpacerComponent(size='sm'),
+                    # callAction
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='最佳食用方式?', text="最佳食用方式?"),
+                    ),
+                    # separator
+                    SeparatorComponent(),
+                    # websiteAction
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='運費計算方式?', text="運費計算方式?")
+                    ),
+                    SeparatorComponent(),
+                    ButtonComponent(
+                        style='link',
+                        height='sm',
+                        action=MessageAction(label='建議搭配飲品?', text="建議搭配飲品?")
+                    )
+                ]
+            ) 
+        )),
+        (BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
                 url='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/79181133_3020826534602508_1338712426803101696_n.jpg?_nc_cat=102&_nc_ohc=w6nC_6npBroAQnol9080iyLn5SU9sz_HWPpPoRZzYlNGJ5xH6ItHR_3NA&_nc_ht=scontent.ftpe8-4.fna&oh=c293f811df9edeaf56f6d4ef3dad4647&oe=5E78A3C5',
@@ -147,29 +194,12 @@ def handle_message(event):
                         style='link',
                         height='sm',
                         action=MessageAction(label='期待新的產品推出', text="期待新的產品推出")
-                    ),
-                    SeparatorComponent(),
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=MessageAction(label='一般訂購跟彌月訂購價格一樣嗎?', text="一般訂購跟彌月訂購價格一樣嗎?")
-                    ),
-                    SeparatorComponent(),
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=MessageAction(label='保冷劑跟保冷袋需要加購嗎?', text="保冷劑跟保冷袋需要加購嗎?")
-                    ),
-                    SeparatorComponent(),
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=MessageAction(label='可以告訴我完整的訂購流程嗎?', text="可以告訴我完整的訂購流程嗎?")
                     )
                 ]
             ) 
+        ))
         )
-        message = FlexSendMessage(alt_text="hello", contents=bubble)
+        message = FlexSendMessage(alt_text="hello", contents=carousel)
         line_bot_api.reply_message(
             event.reply_token,
             message
