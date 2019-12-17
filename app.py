@@ -204,11 +204,7 @@ def handle_message(event):
         ]
         )
         )
-        #message = FlexSendMessage(alt_text="hello", contents=carousel)
-        line_bot_api.reply_message(
-            event.reply_token,
-            Carousel_template
-        )
+        line_bot_api.reply_message(event.reply_token,Carousel_template)
         return
 
     if "找工作" in msg:
