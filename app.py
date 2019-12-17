@@ -109,7 +109,8 @@ def handle_message(event):
             CarouselColumn(thumbnail_image_url='https://scontent.ftpe8-2.fna.fbcdn.net/v/t1.0-9/78918939_3020675737950921_6237532466555387904_n.jpg?_nc_cat=103&_nc_ohc=uxxSk9XOLYUAQmc7lzkDRhNhk_h3LuzTRyKHIboEsX2zHsU8rSeqA6H0g&_nc_ht=scontent.ftpe8-2.fna&oh=015d9b93ba1d4b91c68abba29933dca0&oe=5E7DC110',
                            text='全台冷凍宅配，請先來電確到貨日期及數量，填寫完訂單後再行匯款 或 貨到付款', title='宅配預訂',
                            actions=[
-                URIAction(label='訂購表單', uri='https://bit.ly/2sAgS4I')
+                URIAction(label='訂購表單', uri='https://bit.ly/2sAgS4I'),
+                MessageAction(label='合作宅配廠商', text='黑貓宅急便')
             ])
         ])
         template_message = TemplateSendMessage(
