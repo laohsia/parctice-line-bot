@@ -98,11 +98,13 @@ def handle_message(event):
                            text='請填寫表單，完成後來電確認，取貨時付款即可', title='台中高鐵站門市(自取)',
                            actions=[
                 URIAction(label='訂購表單', uri='https://bit.ly/2Lhgrnx'),
-                MessageAction(label='門市地址', data='高鐵門市地址')
+                MessageAction(label='門市地址', text='高鐵門市地址')
             ]),
-            CarouselColumn(text='hoge2', title='fuga2', actions=[
-                PostbackAction(label='ping with text', data='ping', text='ping'),
-                MessageAction(label='Translate Rice', text='米')
+            CarouselColumn(thumbnail_image_url='https://scontent.ftpe8-2.fna.fbcdn.net/v/t1.0-9/79327003_3020675734617588_111192146333138944_n.jpg?_nc_cat=103&_nc_ohc=TtWIs9eKc-sAQmpge1FFJnBDoRemxWS3a0-LVR6sHLhT35_mS8IKxTsXg&_nc_ht=scontent.ftpe8-2.fna&oh=27b81efab9bcbdf4f8d92525515d998b&oe=5EB39E9E',
+                           text='請填寫表單，完成後來電確認，取貨時付款即可', title='美村門市(自取)',
+                           actions=[
+                URIAction(label='訂購表單', uri='https://bit.ly/2sAgS4I'),
+                MessageAction(label='門市地址', text='美村本店地址')
             ]),
         ])
         template_message = TemplateSendMessage(
