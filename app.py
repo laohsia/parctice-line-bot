@@ -93,40 +93,19 @@ def handle_message(event):
         return
 
     elif msg == "flex":
-        Carousel_template = TemplateSendMessage(
-        alt_text='Carousel template',
-        constent = {
-          "type": "carousel",
-          "contents": [
-            {
-              "type": "bubble",
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "First bubble"
-                  }
-                ]
-              }
-            },
-            {
-              "type": "bubble",
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "Second bubble"
-                  }
-                ]
-              }
-            }
-          ]
-        })
-        line_bot_api.reply_message(event.reply_token,Carousel_template)
+        carousel_template = CarouselTemplate(columns=[
+            CarouselColumn(text='hoge1', title='fuga1', actions=[
+                URIAction(label='Go to line.me', uri='https://line.me'),
+                PostbackAction(label='ping', data='ping')
+            ]),
+            CarouselColumn(text='hoge2', title='fuga2', actions=[
+                PostbackAction(label='ping with text', data='ping', text='ping'),
+                MessageAction(label='Translate Rice', text='米')
+            ]),
+        ])
+        template_message = TemplateSendMessage(
+            alt_text='Carousel alt text', template=carousel_template)
+        line_bot_api.reply_message(event.reply_token, template_message)
         return
 
     if "找工作" in msg:
