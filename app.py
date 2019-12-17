@@ -94,9 +94,11 @@ def handle_message(event):
 
     elif msg == "flex":
         carousel_template = CarouselTemplate(columns=[
-            CarouselColumn(text='hoge1', title='fuga1', actions=[
-                URIAction(label='Go to line.me', uri='https://line.me'),
-                PostbackAction(label='ping', data='ping')
+            CarouselColumn(thumbnail_image_url='https://scontent.ftpe8-2.fna.fbcdn.net/v/t1.0-9/78858712_3020675774617584_8482206259481673728_n.jpg?_nc_cat=103&_nc_ohc=LcqCtsc9Mg4AQkWAfO3bHQkSFkQehfvv6JcB8Uph07V7mgieZ6G3k749w&_nc_ht=scontent.ftpe8-2.fna&oh=d0720b979ae3ae5e8164f4c3f7bcb2b1&oe=5E7D327A',
+                           text='請填寫表單，完成後來電確認，取貨時付款即可', title='台中高鐵站門市(自取)',
+                           actions=[
+                URIAction(label='訂購表單', uri='https://bit.ly/2Lhgrnx'),
+                MessageAction(label='門市地址', data='高鐵門市地址')
             ]),
             CarouselColumn(text='hoge2', title='fuga2', actions=[
                 PostbackAction(label='ping with text', data='ping', text='ping'),
