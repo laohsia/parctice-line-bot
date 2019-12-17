@@ -95,17 +95,22 @@ def handle_message(event):
     elif msg == "flex":
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(thumbnail_image_url='https://scontent.ftpe8-2.fna.fbcdn.net/v/t1.0-9/78858712_3020675774617584_8482206259481673728_n.jpg?_nc_cat=103&_nc_ohc=LcqCtsc9Mg4AQkWAfO3bHQkSFkQehfvv6JcB8Uph07V7mgieZ6G3k749w&_nc_ht=scontent.ftpe8-2.fna&oh=d0720b979ae3ae5e8164f4c3f7bcb2b1&oe=5E7D327A',
-                           text='請填寫表單，完成後來電確認，取貨時付款即可', title='台中高鐵站門市(自取)',
+                           text='請填寫表單，完成後來電確認到貨日期，取貨時付款即可', title='台中高鐵站門市(自取)',
                            actions=[
                 URIAction(label='訂購表單', uri='https://bit.ly/2Lhgrnx'),
                 MessageAction(label='門市地址', text='高鐵門市地址')
             ]),
             CarouselColumn(thumbnail_image_url='https://scontent.ftpe8-2.fna.fbcdn.net/v/t1.0-9/79327003_3020675734617588_111192146333138944_n.jpg?_nc_cat=103&_nc_ohc=TtWIs9eKc-sAQmpge1FFJnBDoRemxWS3a0-LVR6sHLhT35_mS8IKxTsXg&_nc_ht=scontent.ftpe8-2.fna&oh=27b81efab9bcbdf4f8d92525515d998b&oe=5EB39E9E',
-                           text='請填寫表單，完成後來電確認，取貨時付款即可', title='美村門市(自取)',
+                           text='請填寫表單，完成後來電確認到貨日期，取貨時付款即可', title='美村門市(自取)',
                            actions=[
                 URIAction(label='訂購表單', uri='https://bit.ly/2sAgS4I'),
                 MessageAction(label='門市地址', text='美村本店地址')
             ]),
+            CarouselColumn(thumbnail_image_url='https://scontent.ftpe8-2.fna.fbcdn.net/v/t1.0-9/78918939_3020675737950921_6237532466555387904_n.jpg?_nc_cat=103&_nc_ohc=uxxSk9XOLYUAQmc7lzkDRhNhk_h3LuzTRyKHIboEsX2zHsU8rSeqA6H0g&_nc_ht=scontent.ftpe8-2.fna&oh=015d9b93ba1d4b91c68abba29933dca0&oe=5E7DC110',
+                           text='全台冷凍宅配，請先來電確到貨日期及數量，填寫完訂單後再行匯款 或 貨到付款', title='宅配預訂',
+                           actions=[
+                URIAction(label='訂購表單', uri='https://bit.ly/2sAgS4I')
+            ])
         ])
         template_message = TemplateSendMessage(
             alt_text='Carousel alt text', template=carousel_template)
