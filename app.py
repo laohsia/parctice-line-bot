@@ -93,8 +93,11 @@ def handle_message(event):
         return
 
     elif msg == "flex":
-        carousel = CarouselContainer(
-            ( BubbleContainer(
+        Carousel_template = TemplateSendMessage(
+        alt_text='Carousel template',
+        template=CarouselTemplate(
+        columns=[
+            (BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
                 url='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/79181133_3020826534602508_1338712426803101696_n.jpg?_nc_cat=102&_nc_ohc=w6nC_6npBroAQnol9080iyLn5SU9sz_HWPpPoRZzYlNGJ5xH6ItHR_3NA&_nc_ht=scontent.ftpe8-4.fna&oh=c293f811df9edeaf56f6d4ef3dad4647&oe=5E78A3C5',
@@ -198,11 +201,13 @@ def handle_message(event):
                 ]
             ) 
         ))
+        ]
         )
-        message = FlexSendMessage(alt_text="hello", contents=carousel)
+        )
+        #message = FlexSendMessage(alt_text="hello", contents=carousel)
         line_bot_api.reply_message(
             event.reply_token,
-            message
+            Carousel_template
         )
         return
 
