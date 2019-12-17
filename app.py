@@ -97,10 +97,10 @@ def handle_message(event):
         alt_text='Carousel template',
         template=CarouselTemplate(
         columns=[
-            (BubbleContainer(
+            BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
-                url='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/79181133_3020826534602508_1338712426803101696_n.jpg?_nc_cat=102&_nc_ohc=w6nC_6npBroAQnol9080iyLn5SU9sz_HWPpPoRZzYlNGJ5xH6ItHR_3NA&_nc_ht=scontent.ftpe8-4.fna&oh=c293f811df9edeaf56f6d4ef3dad4647&oe=5E78A3C5',
+                url='https://example.com/cafe.jpg',
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
@@ -110,10 +110,69 @@ def handle_message(event):
                 layout='vertical',
                 contents=[
                     # title
-                    TextComponent(text='常見問題', weight='bold', size='xl')
+                    TextComponent(text='Brown Cafe', weight='bold', size='xl'),
+                    # review
+                    BoxComponent(
+                        layout='baseline',
+                        margin='md',
+                        contents=[
+                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                            IconComponent(size='sm', url='https://example.com/grey_star.png'),
+                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                            IconComponent(size='sm', url='https://example.com/grey_star.png'),
+                            TextComponent(text='4.0', size='sm', color='#999999', margin='md',
+                                          flex=0)
                         ]
                     ),
-                
+                    # info
+                    BoxComponent(
+                        layout='vertical',
+                        margin='lg',
+                        spacing='sm',
+                        contents=[
+                            BoxComponent(
+                                layout='baseline',
+                                spacing='sm',
+                                contents=[
+                                    TextComponent(
+                                        text='Place',
+                                        color='#aaaaaa',
+                                        size='sm',
+                                        flex=1
+                                    ),
+                                    TextComponent(
+                                        text='Shinjuku, Tokyo',
+                                        wrap=True,
+                                        color='#666666',
+                                        size='sm',
+                                        flex=5
+                                    )
+                                ],
+                            ),
+                            BoxComponent(
+                                layout='baseline',
+                                spacing='sm',
+                                contents=[
+                                    TextComponent(
+                                        text='Time',
+                                        color='#aaaaaa',
+                                        size='sm',
+                                        flex=1
+                                    ),
+                                    TextComponent(
+                                        text="10:00 - 23:00",
+                                        wrap=True,
+                                        color='#666666',
+                                        size='sm',
+                                        flex=5,
+                                    ),
+                                ],
+                            ),
+                        ],
+                    )
+                ],
+            ),
             footer=BoxComponent(
                 layout='vertical',
                 spacing='sm',
@@ -124,7 +183,7 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='最佳食用方式?', text="最佳食用方式?"),
+                        action=URIAction(label='CALL', uri='tel:000000'),
                     ),
                     # separator
                     SeparatorComponent(),
@@ -132,21 +191,15 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='運費計算方式?', text="運費計算方式?")
-                    ),
-                    SeparatorComponent(),
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=MessageAction(label='建議搭配飲品?', text="建議搭配飲品?")
+                        action=URIAction(label='WEBSITE', uri="https://example.com")
                     )
                 ]
-            ) 
-        )),
-        (BubbleContainer(
+            ),
+        ),
+            BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
-                url='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/79181133_3020826534602508_1338712426803101696_n.jpg?_nc_cat=102&_nc_ohc=w6nC_6npBroAQnol9080iyLn5SU9sz_HWPpPoRZzYlNGJ5xH6ItHR_3NA&_nc_ht=scontent.ftpe8-4.fna&oh=c293f811df9edeaf56f6d4ef3dad4647&oe=5E78A3C5',
+                url='https://example.com/cafe.jpg',
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
@@ -156,10 +209,69 @@ def handle_message(event):
                 layout='vertical',
                 contents=[
                     # title
-                    TextComponent(text='常見問題', weight='bold', size='xl')
+                    TextComponent(text='Brown Cafe', weight='bold', size='xl'),
+                    # review
+                    BoxComponent(
+                        layout='baseline',
+                        margin='md',
+                        contents=[
+                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                            IconComponent(size='sm', url='https://example.com/grey_star.png'),
+                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                            IconComponent(size='sm', url='https://example.com/grey_star.png'),
+                            TextComponent(text='4.0', size='sm', color='#999999', margin='md',
+                                          flex=0)
                         ]
                     ),
-                
+                    # info
+                    BoxComponent(
+                        layout='vertical',
+                        margin='lg',
+                        spacing='sm',
+                        contents=[
+                            BoxComponent(
+                                layout='baseline',
+                                spacing='sm',
+                                contents=[
+                                    TextComponent(
+                                        text='Place',
+                                        color='#aaaaaa',
+                                        size='sm',
+                                        flex=1
+                                    ),
+                                    TextComponent(
+                                        text='Shinjuku, Tokyo',
+                                        wrap=True,
+                                        color='#666666',
+                                        size='sm',
+                                        flex=5
+                                    )
+                                ],
+                            ),
+                            BoxComponent(
+                                layout='baseline',
+                                spacing='sm',
+                                contents=[
+                                    TextComponent(
+                                        text='Time',
+                                        color='#aaaaaa',
+                                        size='sm',
+                                        flex=1
+                                    ),
+                                    TextComponent(
+                                        text="10:00 - 23:00",
+                                        wrap=True,
+                                        color='#666666',
+                                        size='sm',
+                                        flex=5,
+                                    ),
+                                ],
+                            ),
+                        ],
+                    )
+                ],
+            ),
             footer=BoxComponent(
                 layout='vertical',
                 spacing='sm',
@@ -170,7 +282,7 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='最佳食用方式?', text="最佳食用方式?"),
+                        action=URIAction(label='CALL', uri='tel:000000'),
                     ),
                     # separator
                     SeparatorComponent(),
@@ -178,29 +290,11 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='運費計算方式?', text="運費計算方式?")
-                    ),
-                    SeparatorComponent(),
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=MessageAction(label='建議搭配飲品?', text="建議搭配飲品?")
-                    ),
-                    SeparatorComponent(),
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=MessageAction(label='素食者可以吃嗎?', text="素食者可以吃嗎?")
-                    ),
-                    SeparatorComponent(),
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=MessageAction(label='期待新的產品推出', text="期待新的產品推出")
+                        action=URIAction(label='WEBSITE', uri="https://example.com")
                     )
                 ]
-            ) 
-        ))
+            ),
+        )
         ]
         )
         )
